@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .quiz-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        #questions {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+        #timer-box {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none; /* Hide initially */
+        }
+        #answerButtons {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background-color: #e0e6ec;
+            color: #444;
+            padding: 15px 20px;
+            border: 1px solid #c0c6cc;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover:not([disabled]) {
+            background-color: #d0d6e0;
+            transform: translateY(-2px);
+        }
+        .btn:disabled {
+            cursor: not-allowed;
+        }
+        .btn.correct {
+            background-color: #28a745;
+            color: #fff;
+            border-color: #218838;
+        }
+        .btn.incorrect {
+            background-color: #dc3545;
+            color: #fff;
+            border-color: #c82333;
+        }
+        #next-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none; /* Hide by default */
+            margin-top: 20px;
+        }
+        #next-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="timer-box" style="display: none;">Time: <span id="timer-value"></span>s</div>
+        <h2 id="questions">Quiz is loading...</h2>
+        <div id="answerButtons">
+            <!-- Buttons will be generated here by JavaScript -->
+        </div>
+        <button id="next-btn">Next</button>
+    </div>
+    
+    <script src="Quiz app with time.js"></script>
+</body>
+</html>
